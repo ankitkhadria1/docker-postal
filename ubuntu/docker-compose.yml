@@ -1,7 +1,7 @@
 version: "3"
 services:
   postal:
-    image: catdeployed/postal:ubuntu
+    image: .
     container_name: postal
     command: run
     tty: true
@@ -21,10 +21,10 @@ services:
       - RABBITMQ_DEFAULT_USER=postal
       - RABBITMQ_DEFAULT_PASS=changeme
       - RABBITMQ_DEFAULT_VHOST=postal
-      - POSTAL_FNAME=Sia
-      - POSTAL_LNAME=Cat
-      - POSTAL_PASSWORD=SecretCatPassword
-      - POSTAL_EMAIL=myemail@catsworld.com
+      - POSTAL_FNAME=Ankit
+      - POSTAL_LNAME=Kumar
+      - POSTAL_PASSWORD=Password@123$
+      - POSTAL_EMAIL=ankit@theinnerhour.com
     healthcheck:
       test: curl -sS http://127.0.0.1:5000 || exit 1
       interval: 5s
@@ -45,6 +45,15 @@ services:
       - RABBITMQ_DEFAULT_USER=postal
       - RABBITMQ_DEFAULT_PASS=changeme
       - RABBITMQ_DEFAULT_VHOST=/postal
+
+  # certbot:
+  #   image: certbot/certbot
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./docker-compose/certbot/conf:/etc/letsencrypt
+  #     - ./docker-compose/certbot/www:/var/www/certbot
+  #   entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 5d & wait $${!}; done;'"
+
   nginx:
     image: nginx
     container_name: postal_nginx
