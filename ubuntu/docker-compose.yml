@@ -1,7 +1,7 @@
 version: "3"
 services:
   postal:
-    image: .
+    image: catdeployed/postal:ubuntu
     container_name: postal
     command: run
     tty: true
@@ -23,7 +23,7 @@ services:
       - RABBITMQ_DEFAULT_VHOST=postal
       - POSTAL_FNAME=Ankit
       - POSTAL_LNAME=Kumar
-      - POSTAL_PASSWORD=Password123
+      - POSTAL_PASSWORD=Password@123
       - POSTAL_EMAIL=ankit@theinnerhour.com
     healthcheck:
       test: curl -sS http://127.0.0.1:5000 || exit 1
