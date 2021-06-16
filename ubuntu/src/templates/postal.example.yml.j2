@@ -5,9 +5,9 @@ web_server:
 
 web:
   # The host that the management interface will be available on
-  host: postal.example.com
+  host: postal.ihsupport.in
   # The protocol that requests to the management interface should happen on
-  protocol: https
+  protocol: http
 
 fast_server:
   # This can be enabled to enable click & open tracking on emails. It is disabled by
@@ -46,12 +46,12 @@ dns:
   # https://github.com/atech/postal/wiki/Domains-&-DNS-Configuration for further
   # information about these.
   mx_records:
-    - mx.postal.example.com
-  smtp_server_hostname: postal.example.com
-  spf_include: spf.postal.example.com
-  return_path: rp.postal.example.com
-  route_domain: routes.postal.example.com
-  track_domain: track.postal.example.com
+    - mx.postal.ihsupport.in
+  smtp_server_hostname: postal.ihsupport.in
+  spf_include: spf.postal.ihsupport.in
+  return_path: rp.postal.ihsupport.in
+  route_domain: routes.postal.ihsupport.in
+  track_domain: track.postal.ihsupport.in
 
 smtp:
   # Specify an SMTP server that can be used to send messages from the Postal management
