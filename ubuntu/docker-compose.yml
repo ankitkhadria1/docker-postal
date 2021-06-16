@@ -25,6 +25,13 @@ services:
       - POSTAL_LNAME=Kumar
       - POSTAL_PASSWORD=Password@123
       - POSTAL_EMAIL=ankit@theinnerhour.com
+      - POSTAL_SMTP_FROM_NAME=Postal
+      - POSTAL_SMTP_FROM_ADDRESS=postal@yourdomain.com
+      - POSTAL_SMTP_SERVER_HOSTNAME=postal.ihsupport.in
+      - POSTAL_SPF_INCLUDE=spf.postal.ihsupport.in
+      - POSTAL_RETURN_PATH=rp.postal.ihsupport.in
+      - POSTAL_ROUTE_DOMAIN=routes.postal.ihsupport.in
+      - POSTAL_TRACK_DOMAIN=track.postal.ihsupport.in
     healthcheck:
       test: curl -sS http://127.0.0.1:5000 || exit 1
       interval: 5s
