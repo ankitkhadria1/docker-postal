@@ -8,7 +8,7 @@ services:
     command: run
     tty: true
     ports:
-      - 127.0.0.1:2525:2525
+      - 127.0.0.1:25:25
     depends_on:
       - "mysql"
       - "rabbitmq"
